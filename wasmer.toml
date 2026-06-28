@@ -1,0 +1,19 @@
+[package]
+name = "xcpro"
+version = "0.1.0"
+description = "XC PRO - Stremio Addon para Xtream Codes"
+
+[[command]]
+name = "run"
+module = "php/php"
+runner = "https://webc.org/runner/wasi"
+
+[command.annotations.wasi]
+main-args = ["-S", "0.0.0.0:8080", "router.php"]
+
+[[fs]]
+name = "php"
+version = "8.3.1011"
+
+[fs.volume]
+"/app" = "."
